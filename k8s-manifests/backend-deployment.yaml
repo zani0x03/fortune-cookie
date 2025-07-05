@@ -7,17 +7,17 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      aoo: backend
-    template:
-      metadata:
-        labels:
-          app: backend
-      spec:
-        containers:
-        - name: backend
-          image: rafaelvzago/fortune-backend-rust:1.0
-          ports:
-          - containerPort: 8080
-          env:
-          - name: API_URL
-            value: "https://api.adviceslip.com/advice"
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: rafaelvzago/fortune-backend-rust:1.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: API_URL
+          value: "https://api.adviceslip.com/advice"
